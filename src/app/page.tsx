@@ -7,7 +7,7 @@ import { supabase } from '../lib/supabase';
 import { 
   BookOpen, Bell, User, LogOut, ArrowRight, 
   UploadCloud, Star, Calendar, Search, ChevronDown, 
-  MessageCircle, Rss, Hash, X, FileText, Loader2 
+  MessageCircle, Rss, Hash, X, FileText, Loader2, Video 
 } from 'lucide-react';
 
 // Định nghĩa kiểu dữ liệu kết quả tìm kiếm
@@ -174,11 +174,11 @@ export default function GizmoHubDashboard() {
           <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-600 rounded-full blur-[120px] opacity-20"></div>
         </div>
 
-        {/* 5 Thẻ tính năng Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {/* 6 Thẻ tính năng Grid (3 cột x 2 hàng) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <Link href="/documents" className="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between">
             <div>
-              <div className="bg-emerald-50 text-emerald-600 w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><UploadCloud className="h-5 w-5" /></div>
+              <div className="bg-emerald-50 text-emerald-600 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><UploadCloud className="h-6 w-6" /></div>
               <h2 className="text-lg font-bold text-slate-900 mb-2 leading-tight">Tài Liệu</h2>
               <p className="text-slate-400 text-[11px] font-medium leading-relaxed mb-4">Kho giáo trình, đề thi HSA và học phần UET.</p>
             </div>
@@ -187,7 +187,7 @@ export default function GizmoHubDashboard() {
 
           <Link href="/reviews" className="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between">
             <div>
-              <div className="bg-amber-50 text-amber-500 w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><Star className="h-5 w-5" /></div>
+              <div className="bg-amber-50 text-amber-500 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><Star className="h-6 w-6" /></div>
               <h2 className="text-lg font-bold text-slate-900 mb-2 leading-tight">Review GV</h2>
               <p className="text-slate-400 text-[11px] font-medium leading-relaxed mb-4">Góc nhìn đa chiều và chân thực về cách giảng dạy.</p>
             </div>
@@ -196,7 +196,7 @@ export default function GizmoHubDashboard() {
 
           <Link href="/schedule" className="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between">
             <div>
-              <div className="bg-purple-50 text-purple-600 w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><Calendar className="h-5 w-5" /></div>
+              <div className="bg-purple-50 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><Calendar className="h-6 w-6" /></div>
               <h2 className="text-lg font-bold text-slate-900 mb-2 leading-tight">Lịch Học</h2>
               <p className="text-slate-400 text-[11px] font-medium leading-relaxed mb-4">Tự động nhắc nhở tiết học và lịch thi cá nhân.</p>
             </div>
@@ -205,21 +205,32 @@ export default function GizmoHubDashboard() {
 
           <Link href="/chat" className="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between">
             <div>
-              <div className="bg-sky-50 text-sky-500 w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><MessageCircle className="h-5 w-5" /></div>
+              <div className="bg-sky-50 text-sky-500 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><MessageCircle className="h-6 w-6" /></div>
               <h2 className="text-lg font-bold text-slate-900 mb-2 leading-tight">Phòng Chat</h2>
               <p className="text-slate-400 text-[11px] font-medium leading-relaxed mb-4">Nhắn tin thời gian thực và gửi file đa phương tiện.</p>
             </div>
             <div className="text-sky-500 font-bold text-[10px] flex items-center gap-1 uppercase tracking-widest">Vào chat <ArrowRight size={12} /></div>
           </Link>
 
-          <Link href="/feed" className="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between ring-2 ring-blue-500/10">
+          <Link href="/feed" className="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between">
             <div>
-              <div className="bg-blue-50 text-blue-600 w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><Rss className="h-5 w-5" /></div>
+              <div className="bg-blue-50 text-blue-600 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><Rss className="h-6 w-6" /></div>
               <h2 className="text-lg font-bold text-slate-900 mb-2 leading-tight">New Feed</h2>
               <p className="text-slate-400 text-[11px] font-medium leading-relaxed mb-4">Đăng bài, trao đổi kiến thức và theo dõi hashtag #hot.</p>
             </div>
             <div className="text-blue-600 font-bold text-[10px] flex items-center gap-1 uppercase tracking-widest">Khám phá <ArrowRight size={12} /></div>
           </Link>
+
+          {/* === TÍNH NĂNG MỚI: VIDEO CALL === */}
+          <Link href="/meet" className="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between ring-2 ring-rose-500/10">
+            <div>
+              <div className="bg-rose-50 text-rose-500 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><Video className="h-6 w-6" /></div>
+              <h2 className="text-lg font-bold text-slate-900 mb-2 leading-tight">Học Nhóm Video</h2>
+              <p className="text-slate-400 text-[11px] font-medium leading-relaxed mb-4">Tạo link gọi video nhóm lên tới 20 người. Tối đa 60 phút/phòng.</p>
+            </div>
+            <div className="text-rose-500 font-bold text-[10px] flex items-center gap-1 uppercase tracking-widest">Tạo phòng ngay <ArrowRight size={12} /></div>
+          </Link>
+          {/* ================================= */}
         </div>
       </main>
 
