@@ -1,8 +1,7 @@
-// src/app/meet/page.tsx
 "use client";
 
 import React, { useState } from 'react';
-import { Video, ArrowLeft, Users, Clock, Copy, Link as LinkIcon } from 'lucide-react';
+import { Video, ArrowLeft, Users, Clock, Link as LinkIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -11,7 +10,6 @@ export default function MeetLobby() {
   const [roomCode, setRoomCode] = useState('');
 
   const createRoom = () => {
-    // Tạo một mã phòng ngẫu nhiên và bảo mật
     const randomId = Math.random().toString(36).substring(2, 10);
     router.push(`/meet/gizmo-${randomId}`);
   };
@@ -19,7 +17,6 @@ export default function MeetLobby() {
   const joinRoom = (e: React.FormEvent) => {
     e.preventDefault();
     if (roomCode.trim()) {
-      // Cho phép dán cả link hoặc chỉ nhập mã
       const code = roomCode.split('/').pop()?.replace(/[^a-zA-Z0-9-]/g, '');
       router.push(`/meet/${code}`);
     }
@@ -32,7 +29,6 @@ export default function MeetLobby() {
       </Link>
 
       <div className="w-full max-w-4xl grid md:grid-cols-2 gap-8 items-center">
-        {/* Cột trái: Thông tin */}
         <div className="space-y-6">
           <div className="bg-rose-100 text-rose-600 w-16 h-16 rounded-3xl flex items-center justify-center shadow-inner">
             <Video size={32} />
@@ -41,7 +37,7 @@ export default function MeetLobby() {
             Phòng Học Nhóm <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-500">Trực Tuyến</span>
           </h1>
           <p className="text-slate-600 font-medium leading-relaxed max-w-md">
-            Hệ thống video call được tối ưu hóa cho sinh viên UET. Chỉ cần 1 cú click để tạo phòng, chia sẻ link cho bạn bè và bắt đầu học ngay không cần cài đặt.
+            Hệ thống video call đa nền tảng dành cho sinh viên. Khởi tạo tức thì, chia sẻ link dễ dàng và kết nối nhóm học tập mà không cần cài đặt phần mềm phức tạp.
           </p>
           
           <div className="flex gap-6 pt-4">
@@ -54,7 +50,6 @@ export default function MeetLobby() {
           </div>
         </div>
 
-        {/* Cột phải: Form tương tác */}
         <div className="bg-white p-8 rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100">
           <button 
             onClick={createRoom}
@@ -75,16 +70,13 @@ export default function MeetLobby() {
                 <LinkIcon className="h-5 w-5 text-slate-400" />
               </div>
               <input 
-                type="text" 
-                value={roomCode}
-                onChange={(e) => setRoomCode(e.target.value)}
+                type="text" value={roomCode} onChange={(e) => setRoomCode(e.target.value)}
                 placeholder="Nhập mã phòng hoặc dán link..." 
                 className="w-full bg-slate-50 border border-slate-200 pl-12 pr-4 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose-500 font-bold text-slate-700 transition-all"
               />
             </div>
             <button 
-              type="submit"
-              disabled={!roomCode.trim()}
+              type="submit" disabled={!roomCode.trim()}
               className="w-full bg-slate-100 text-slate-600 font-bold py-4 rounded-2xl hover:bg-slate-200 disabled:opacity-50 transition-all"
             >
               Tham gia phòng
