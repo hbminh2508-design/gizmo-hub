@@ -1,21 +1,36 @@
-# GizmoHUB
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-GizmoHUB là một nền tảng mã nguồn mở được thiết kế dành riêng cho cộng đồng sinh viên, đặc biệt hữu ích để triển khai trong các môi trường kỹ thuật và công nghệ. Dự án ra đời với mục tiêu xây dựng một hệ sinh thái hỗ trợ học tập toàn diện, minh bạch và tối ưu hóa thời gian cho người học.
+## Getting Started
 
-## Các tính năng cốt lõi
+First, run the development server:
 
-- **Kho lưu trữ và chia sẻ tài liệu:** Một không gian tập trung nơi sinh viên có thể dễ dàng tải lên, phân loại, tìm kiếm và chia sẻ các tài liệu học tập, giáo trình, đề cương và bài tập thực hành.
-- **Hệ thống đánh giá giảng viên minh bạch:** Nền tảng cho phép sinh viên để lại nhận xét và đánh giá về phương pháp giảng dạy của các khóa học. Để đảm bảo tính khách quan và xây dựng, mọi đánh giá sẽ được xét duyệt bởi đội ngũ quản trị viên là các sinh viên có độ uy tín cao (High-reputation members) trước khi được hiển thị công khai.
-- **Trợ lý nhắc nhở lịch học:** Công cụ cá nhân hóa giúp người dùng quản lý thời khóa biểu. Hệ thống sẽ tự động gửi thông báo nhắc nhở về các tiết học sắp tới, lịch thi và các hạn chót nộp bài quan trọng.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Lộ trình phát triển (Roadmap)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Dự án GizmoHUB hiện vẫn đang trong quá trình phát triển tích cực. Chúng tôi sẽ tiếp tục nghiên cứu và cập nhật thêm nhiều tính năng mới trong các phiên bản tiếp theo để đáp ứng tốt hơn nhu cầu thực tế của sinh viên.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Hướng dẫn cài đặt
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-*(Bạn có thể bổ sung các lệnh cài đặt môi trường tại đây sau khi chốt được công nghệ sử dụng, ví dụ: các lệnh clone git, install thư viện, setup database...)*
+## Learn More
 
-## Đóng góp (Contributing)
+To learn more about Next.js, take a look at the following resources:
 
-GizmoHUB luôn hoan nghênh sự đóng góp từ cộng đồng để dự án ngày càng hoàn thiện hơn. Nếu bạn có ý tưởng tính năng mới hoặc phát hiện lỗi, vui lòng tạo Pull Request hoặc mở một Issue mới trên kho lưu trữ này.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
