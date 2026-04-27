@@ -87,12 +87,17 @@ export default function GizmoHubDashboard() {
       {/* Navbar */}
       <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="bg-blue-600 p-1.5 rounded-lg">
-              <BookOpen className="h-5 w-5 text-white" />
-            </div>
+          
+          {/* === LOGO ĐÃ ĐƯỢC THAY THẾ TẠI ĐÂY === */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <img 
+              src="/icon.png" 
+              alt="GizmoHUB Logo" 
+              className="h-9 w-9 rounded-xl shadow-sm border border-slate-100 group-hover:scale-110 transition-transform" 
+            />
             <span className="font-extrabold text-xl text-slate-900 tracking-tight">Gizmo<span className="text-blue-600">HUB</span></span>
           </Link>
+          {/* ======================================= */}
 
           <div className="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-500">
             <Link href="/documents" className="hover:text-blue-600 transition">Tài liệu</Link>
@@ -169,9 +174,8 @@ export default function GizmoHubDashboard() {
           <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-600 rounded-full blur-[120px] opacity-20"></div>
         </div>
 
-        {/* 5 Thẻ tính năng Grid (1 col on mobile, 5 on desktop) */}
+        {/* 5 Thẻ tính năng Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {/* Card: Tài liệu */}
           <Link href="/documents" className="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between">
             <div>
               <div className="bg-emerald-50 text-emerald-600 w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><UploadCloud className="h-5 w-5" /></div>
@@ -181,7 +185,6 @@ export default function GizmoHubDashboard() {
             <div className="text-emerald-600 font-bold text-[10px] flex items-center gap-1 uppercase tracking-widest">Khám phá <ArrowRight size={12} /></div>
           </Link>
 
-          {/* Card: Review */}
           <Link href="/reviews" className="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between">
             <div>
               <div className="bg-amber-50 text-amber-500 w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><Star className="h-5 w-5" /></div>
@@ -191,7 +194,6 @@ export default function GizmoHubDashboard() {
             <div className="text-amber-500 font-bold text-[10px] flex items-center gap-1 uppercase tracking-widest">Xem review <ArrowRight size={12} /></div>
           </Link>
 
-          {/* Card: Lịch học */}
           <Link href="/schedule" className="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between">
             <div>
               <div className="bg-purple-50 text-purple-600 w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><Calendar className="h-5 w-5" /></div>
@@ -201,7 +203,6 @@ export default function GizmoHubDashboard() {
             <div className="text-purple-600 font-bold text-[10px] flex items-center gap-1 uppercase tracking-widest">Cài đặt <ArrowRight size={12} /></div>
           </Link>
 
-          {/* Card: Chat */}
           <Link href="/chat" className="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between">
             <div>
               <div className="bg-sky-50 text-sky-500 w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><MessageCircle className="h-5 w-5" /></div>
@@ -211,7 +212,6 @@ export default function GizmoHubDashboard() {
             <div className="text-sky-500 font-bold text-[10px] flex items-center gap-1 uppercase tracking-widest">Vào chat <ArrowRight size={12} /></div>
           </Link>
 
-          {/* Card: New Feed */}
           <Link href="/feed" className="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between ring-2 ring-blue-500/10">
             <div>
               <div className="bg-blue-50 text-blue-600 w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><Rss className="h-5 w-5" /></div>
