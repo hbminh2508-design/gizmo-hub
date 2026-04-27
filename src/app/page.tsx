@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { supabase } from '../lib/supabase';
 import { 
   BookOpen, Bell, User, LogOut, ArrowRight, 
-  UploadCloud, Star, Calendar, Search, ChevronDown
+  UploadCloud, Star, Calendar, Search, ChevronDown, MessageCircle
 } from 'lucide-react';
 
 export default function GizmoHubDashboard() {
@@ -44,11 +44,12 @@ export default function GizmoHubDashboard() {
             <span className="font-extrabold text-xl text-slate-900 tracking-tight">Gizmo<span className="text-blue-600">HUB</span></span>
           </Link>
 
-          {/* Center Links */}
+          {/* Center Links - Đã thêm link Trò chuyện */}
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-500">
             <Link href="/documents" className="hover:text-blue-600 transition">Tài liệu</Link>
             <Link href="/reviews" className="hover:text-blue-600 transition">Giảng viên</Link>
             <Link href="/schedule" className="hover:text-blue-600 transition">Lịch học</Link>
+            <Link href="/chat" className="hover:text-blue-600 transition">Trò chuyện</Link>
           </div>
 
           {/* Right Area (User & Notifications) */}
@@ -132,44 +133,61 @@ export default function GizmoHubDashboard() {
           <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-blue-900/40 to-transparent"></div>
         </div>
 
-        {/* 3 Thẻ tính năng (Clickable) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* 4 Thẻ tính năng - Chuyển sang md:grid-cols-4 */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {/* Card: Tài liệu */}
           <Link href="/documents" className="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group cursor-pointer flex flex-col justify-between">
             <div>
               <div className="bg-emerald-50 text-emerald-600 w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
                 <UploadCloud className="h-6 w-6" />
               </div>
               <h2 className="text-xl font-bold text-slate-900 mb-3">Kho Tài Liệu</h2>
-              <p className="text-slate-500 text-sm leading-relaxed mb-6">Chia sẻ và tải xuống giáo trình, đề thi nhanh chóng. Hệ thống phân loại thông minh theo từng khoa.</p>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6">Chia sẻ và tải xuống giáo trình, đề thi nhanh chóng. Phân loại thông minh theo khoa.</p>
             </div>
             <div className="text-emerald-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
               Khám phá ngay <ArrowRight className="h-4 w-4" />
             </div>
           </Link>
 
+          {/* Card: Đánh giá */}
           <Link href="/reviews" className="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group cursor-pointer flex flex-col justify-between">
             <div>
               <div className="bg-amber-50 text-amber-500 w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
                 <Star className="h-6 w-6" />
               </div>
               <h2 className="text-xl font-bold text-slate-900 mb-3">Review Giảng Viên</h2>
-              <p className="text-slate-500 text-sm leading-relaxed mb-6">Những chia sẻ chân thực nhất về phương pháp dạy. Kiểm duyệt nghiêm ngặt bởi các thành viên uy tín.</p>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6">Những chia sẻ chân thực nhất. Kiểm duyệt nghiêm ngặt bởi thành viên uy tín.</p>
             </div>
             <div className="text-amber-500 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
               Xem đánh giá <ArrowRight className="h-4 w-4" />
             </div>
           </Link>
 
+          {/* Card: Lịch học */}
           <Link href="/schedule" className="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group cursor-pointer flex flex-col justify-between">
             <div>
               <div className="bg-purple-50 text-purple-600 w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
                 <Calendar className="h-6 w-6" />
               </div>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">Nhắc Lịch Học</h2>
-              <p className="text-slate-500 text-sm leading-relaxed mb-6">Đồng bộ lịch thi, lịch học. Gửi thông báo nhắc nhở tự động qua Email và điện thoại của bạn.</p>
+              <h2 className="text-xl font-bold text-slate-900 mb-3">Lịch Học</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6">Đồng bộ lịch thi, lịch học. Nhắc nhở tự động qua Email và điện thoại của bạn.</p>
             </div>
             <div className="text-purple-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
               Thiết lập lịch <ArrowRight className="h-4 w-4" />
+            </div>
+          </Link>
+
+          {/* Card: Phòng Chat - MỚI THÊM */}
+          <Link href="/chat" className="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group cursor-pointer flex flex-col justify-between">
+            <div>
+              <div className="bg-sky-50 text-sky-500 w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
+                <MessageCircle className="h-6 w-6" />
+              </div>
+              <h2 className="text-xl font-bold text-slate-900 mb-3">Phòng Chat</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6">Trò chuyện trực tuyến thời gian thực. Kết nối cùng cộng đồng sinh viên ngay lập tức.</p>
+            </div>
+            <div className="text-sky-500 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+              Vào nhắn tin <ArrowRight className="h-4 w-4" />
             </div>
           </Link>
         </div>
